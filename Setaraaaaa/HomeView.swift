@@ -14,15 +14,23 @@ struct HomeView: View {
     @State var checkCount: Int = 0
     @State var nameParticipant: [String] = ["Me", "test"]
     @State private var navigated = false
-    @State var listName: [ListName] = [ListName(name: "Me", isChecked: false), ListName(name: "test", isChecked: false)]
+    @State var listName: [ListName] = [
+        ListName(name: "Me", isChecked: false, food: [], total: 0),
+        ListName(name: "test", isChecked: false, food: [], total: 0)]
     
     var body: some View {
         
+        
+        
+        
+        
         VStack {
             
-            NavigationView {
+            
+            NavigationStack {
                 VStack() {
                     List {
+                        
                         
                         ForEach(0..<nameParticipant.count, id:\.self) { index in
                             HStack {
@@ -37,6 +45,19 @@ struct HomeView: View {
                                     
                                     print("State : \(self.checkState)")
                                     
+                                    let checkNameDatabase = SharedPreferences.shared.getParitcipant(name: nameParticipant[index])
+                                    
+                                    if checkNameDatabase == nil {
+                                        SharedPreferences.shared.add(participant: ListName(name: "\(nameParticipant[index])", isChecked: false, food: [], total: 0))
+                                        
+                                        print("Berhasil menambahkan \(nameParticipant[index])")
+                                    } else {
+                                        
+                                        print("nama ini udah ada")
+                                    }
+                                    
+                                    
+                                    
                                     if(checkState[index] == true) {
                                         checkCount += 1
                                         
@@ -45,9 +66,10 @@ struct HomeView: View {
                                     }
                                     
                                     if checkCount < 2 {
+                                        
                                         self.btnActive = true
+                                        
                                     }else  {
-                                                                                                                        
                                         self.btnActive = false
                                     }
                                     
@@ -61,6 +83,7 @@ struct HomeView: View {
                                         
                                             .lineLimit(1)
                                             .frame(width: 200, alignment: .leading)
+                                            
                                         
                                         
                                         Rectangle()
@@ -69,11 +92,24 @@ struct HomeView: View {
                                             .cornerRadius(5)
                                             .padding(.leading, 120)
                                         
+                                    }
+                                    
+                                    .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                                         
-                                        
+                                        Button {
+                                            
+                                            nameParticipant.remove(at: index)
+    
+                                        } label: {
+                                            Image(systemName: "trash")
+                                        } .tint(.red)
                                         
                                     }
+                                    )
+                            
+                                    
                                 }
+                                
                                 .foregroundColor(Color.black)
                                 
                                 
@@ -89,7 +125,7 @@ struct HomeView: View {
                             nameParticipant.append(text)
                             checkState.append(false)
                             
-                            listName.append(ListName(name: text, isChecked: false))
+                            listName.append(ListName(name: text, isChecked: false, food: [], total: 0))
                             
                             
                         } secondaryAction: {
@@ -102,6 +138,7 @@ struct HomeView: View {
                     Text("Add Person")
                         .fontWeight(.bold)
                         .font(.system(.title2, design: .rounded))
+//                        .font(.system(style: .compact))
                 }
                 .frame(width: 200)
                 .padding()
@@ -119,18 +156,23 @@ struct HomeView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
-                        NavigationLink(destination: TablePlateView(listNameTable: listName), isActive: $navigated) {
-                            Button(
-                                action: {
-                                    
-                                    navigated = true
-                                    
-                                }, label: {
-                                    Text("Next")
-                                }
-                            )
-                            .disabled(btnActive)
+                        
+                            
+                            NavigationLink(destination: TablePlateView(listNameTable: listName), isActive: $navigated) {
+                                Button(
+                                    action: {
+                                        
+                                        navigated = true
+                                        
+        
+                                        
+                                    }, label: {
+                                        Text("Next")
+                                    }
+                                )
                         }
+                            .disabled(btnActive)
+                        
                         
                         
                     }
@@ -156,6 +198,7 @@ extension View {
         alert.addTextField { field in
             field.placeholder = hintText
         }
+        
         
         alert.addAction(.init(title: primaryTitle, style: .cancel, handler: { _ in secondaryAction()}))
         

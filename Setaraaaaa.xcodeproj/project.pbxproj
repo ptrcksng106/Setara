@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F740A6FD29E7327500265AAC /* TreatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740A6FC29E7327500265AAC /* TreatView.swift */; };
 		F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */; };
 		F75B50DB29D6CB20007D2998 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50DA29D6CB20007D2998 /* ContentView.swift */; };
 		F75B50DD29D6CB21007D2998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75B50DC29D6CB21007D2998 /* Assets.xcassets */; };
@@ -16,12 +17,15 @@
 		F75B50EB29DAB375007D2998 /* WelcomeScreenThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */; };
 		F75B50ED29DAB3D5007D2998 /* SpendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50EC29DAB3D5007D2998 /* SpendingView.swift */; };
 		F75B50F129DB4583007D2998 /* TablePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50F029DB4583007D2998 /* TablePlateView.swift */; };
+		F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036C29E5184100CA6C83 /* SplashScreenView.swift */; };
+		F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036E29E5236200CA6C83 /* UserDefaults.swift */; };
 		F79FF12A29E2FE4500B727A1 /* ListName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FF12929E2FE4500B727A1 /* ListName.swift */; };
 		F7F1355E29DBBD8E0074F8F3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */; };
 		F7F1356029DC2BB30074F8F3 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355F29DC2BB30074F8F3 /* ItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F740A6FC29E7327500265AAC /* TreatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatView.swift; sourceTree = "<group>"; };
 		F75B50D529D6CB20007D2998 /* Setaraaaaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setaraaaaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetaraaaaaApp.swift; sourceTree = "<group>"; };
 		F75B50DA29D6CB20007D2998 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenThreeView.swift; sourceTree = "<group>"; };
 		F75B50EC29DAB3D5007D2998 /* SpendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingView.swift; sourceTree = "<group>"; };
 		F75B50F029DB4583007D2998 /* TablePlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePlateView.swift; sourceTree = "<group>"; };
+		F790036C29E5184100CA6C83 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		F790036E29E5236200CA6C83 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		F79FF12929E2FE4500B727A1 /* ListName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListName.swift; sourceTree = "<group>"; };
 		F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F7F1355F29DC2BB30074F8F3 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -71,14 +77,17 @@
 				F75B50DA29D6CB20007D2998 /* ContentView.swift */,
 				F75B50E629D6CEA2007D2998 /* ViewDuaView.swift */,
 				F75B50F029DB4583007D2998 /* TablePlateView.swift */,
+				F740A6FC29E7327500265AAC /* TreatView.swift */,
 				F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */,
 				F79FF12929E2FE4500B727A1 /* ListName.swift */,
 				F7F1355F29DC2BB30074F8F3 /* ItemView.swift */,
+				F790036C29E5184100CA6C83 /* SplashScreenView.swift */,
 				F75B50E829DAB2A7007D2998 /* WelcomeScreenTwoView.swift */,
 				F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */,
 				F75B50DC29D6CB21007D2998 /* Assets.xcassets */,
 				F75B50DE29D6CB21007D2998 /* Preview Content */,
 				F75B50EC29DAB3D5007D2998 /* SpendingView.swift */,
+				F790036E29E5236200CA6C83 /* UserDefaults.swift */,
 			);
 			path = Setaraaaaa;
 			sourceTree = "<group>";
@@ -165,9 +174,12 @@
 				F75B50EB29DAB375007D2998 /* WelcomeScreenThreeView.swift in Sources */,
 				F75B50DB29D6CB20007D2998 /* ContentView.swift in Sources */,
 				F75B50E729D6CEA2007D2998 /* ViewDuaView.swift in Sources */,
+				F740A6FD29E7327500265AAC /* TreatView.swift in Sources */,
+				F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */,
 				F7F1356029DC2BB30074F8F3 /* ItemView.swift in Sources */,
 				F75B50E929DAB2A7007D2998 /* WelcomeScreenTwoView.swift in Sources */,
 				F7F1355E29DBBD8E0074F8F3 /* HomeView.swift in Sources */,
+				F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */,
 				F75B50ED29DAB3D5007D2998 /* SpendingView.swift in Sources */,
 				F79FF12A29E2FE4500B727A1 /* ListName.swift in Sources */,
 				F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */,
