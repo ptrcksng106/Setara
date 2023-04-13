@@ -34,16 +34,19 @@ struct SpendingView: View {
                             HStack() {
                                 Image(systemName: "person.circle.fill")
                                     .resizable()
-                                    .frame(width: 60, height: 60)
+                                    .frame(width: 30, height: 30)
                                     .foregroundColor(.black)
                                     .padding(.trailing,10)
-                                VStack(alignment: .leading) {
+                                VStack() {
                                     Text("\(listNameTable[i].name)")
+                                        .lineLimit(2)
+                                        .frame(alignment: .leading)
                                 }
                                 .padding(.leading, 20)
                                 .padding(.trailing, 50)
                                 
                                 Text("Rp \(participantss!.total)")
+                                    .frame(width : 100, height: 100, alignment: .leading)
                             }
                             
                             
@@ -51,10 +54,7 @@ struct SpendingView: View {
                         
                     }
                     .scrollContentBackground(.hidden)
-                    .padding(.bottom, 40)
-                    .padding(.trailing, 0)
-                    .padding(.leading, 0)
-                    
+
                 }
                 .frame(width: 360, height: 470)
                 .background(Color.gray)
@@ -70,7 +70,7 @@ struct SpendingView: View {
                         .frame(width: 200)
                         .padding()
                         .foregroundColor(.white)
-                        .background(Color.orange)
+                        .background(CustomColor.myColor)
                         .cornerRadius(20)
                         .shadow(radius: 5)
                 }

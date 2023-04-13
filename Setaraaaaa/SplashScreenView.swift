@@ -31,7 +31,6 @@ struct SplashScreenView: View {
             
             
         }
-//        .background(CustomColor.colorYellow)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
@@ -49,8 +48,5 @@ struct SplashScreenView: View {
         }
     }
     
-    struct CustomColor {
-        static let colorYellow = Color("Kuning")
-    }
     
 }

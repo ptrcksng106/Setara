@@ -21,11 +21,7 @@ struct HomeView: View {
     var body: some View {
         
         
-        
-        
-        
         VStack {
-            
             
             NavigationStack {
                 VStack() {
@@ -87,7 +83,7 @@ struct HomeView: View {
                                         
                                         
                                         Rectangle()
-                                            .fill(self.checkState[index] ? Color.orange : Color.gray)
+                                            .fill(self.checkState[index] ? CustomColor.myColor : Color.gray)
                                             .frame(width:20, height:20, alignment: .center)
                                             .cornerRadius(5)
                                             .padding(.leading, 120)
@@ -138,12 +134,11 @@ struct HomeView: View {
                     Text("Add Person")
                         .fontWeight(.bold)
                         .font(.system(.title2, design: .rounded))
-//                        .font(.system(style: .compact))
                 }
                 .frame(width: 200)
                 .padding()
                 .foregroundColor(.white)
-                .background(Color.orange)
+                .background(CustomColor.myColor)
                 .cornerRadius(20)
                 .shadow(radius: 5)
                 .padding(.bottom, 100)

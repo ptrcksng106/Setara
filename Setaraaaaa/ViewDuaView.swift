@@ -33,7 +33,7 @@ struct ViewDuaView: View {
                 
                 HStack(spacing: 4) {
                     ForEach(0..<3) {i in
-                        Color(.orange)
+                        CustomColor.myColor
                             .opacity(i == currentPage ? 1 : 0.5)
                             .frame(width:i == currentPage ? 80 : 47, height: 8)
                             .cornerRadius(10)
@@ -62,7 +62,7 @@ struct ViewDuaView: View {
                         .frame(width: 200)
                         .padding()
                         .foregroundColor(.white)
-                        .background(Color.orange)
+                        .background(CustomColor.myColor)
                         .cornerRadius(20)
                         .shadow(radius: 5)
                         .padding(.top, 70)
@@ -78,8 +78,8 @@ struct ViewDuaView: View {
                             })
                             .frame(width: 200)
                             .padding()
-                            .foregroundColor(.white)
-                            .background(Color.orange)
+                            .foregroundColor(.white)                            
+                            .background(CustomColor.myColor)
                             .cornerRadius(20)
                             .shadow(radius: 5)
                             .padding(.top, 70)
@@ -94,6 +94,8 @@ struct ViewDuaView: View {
         
         
     }
+    
+    
 }
 
 
@@ -102,4 +104,8 @@ struct ViewDuaView_Previews: PreviewProvider {
     static var previews: some View {
         ViewDuaView()
     }
+}
+
+struct CustomColor {
+   static let myColor = Color("BasicYellow")
 }

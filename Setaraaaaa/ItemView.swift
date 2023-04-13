@@ -11,7 +11,6 @@ struct ItemView: View {
     
     @State var checkState: Bool = false
     @State private var isToggle: [Bool] = [false,false,false]
-    @State private var optionCategory = ["Food", "Taxi", "Other"]
     @State private var nameItem: String = ""
     @State private var basePrice: String = ""
     @State private var showingAlert = false
@@ -45,12 +44,14 @@ struct ItemView: View {
                                         .fontWeight(.regular)
                                         .font(.system(size: 16))
                                         .padding(.trailing, 120)
+                                        .frame(alignment: .leading)
                                     
                                     
                                     Text("Rp \(participantss.food[i].itemPrice)")
                                         .fontWeight(.light)
                                         .font(.system(size: 16))
                                         .padding(.leading, 50)
+                                        .frame(alignment: .leading)
                                     
                                 }
                                 
@@ -83,19 +84,6 @@ struct ItemView: View {
                         .fontWeight(.bold)
                         .font(.system(size: 20))
                     
-                    HStack {
-                        
-                        Text("Category")
-                            .padding(.trailing, 200)
-                            .padding(.bottom,5)
-                        
-                        
-                        Picker("Test", selection: $optionCategory) {
-                            ForEach(optionCategory, id: \.self)  { category in
-                                Text(category)
-                            }
-                        }.padding(.leading, 10)
-                    }
                     
                     HStack {
                         Text("Name")
@@ -152,7 +140,7 @@ struct ItemView: View {
                             .foregroundColor(.white)
                             .padding(.trailing,10)
                             .frame(width: 70, height: 30, alignment: .center)
-                            .background(.orange)
+                            .background(CustomColor.myColor)
                             .disabled(!isToggle[0])
                             
                             
@@ -188,7 +176,7 @@ struct ItemView: View {
                             }
                             .frame(width: 70, height: 30)
                             .foregroundColor(.white)
-                            .background(.orange)
+                            .background(CustomColor.myColor)
                             .padding(.leading,70)
                             .padding(.trailing, 10)
                             .disabled(!isToggle[1])
@@ -220,7 +208,7 @@ struct ItemView: View {
                         }
                         .frame(width: 70, height: 30)
                         .foregroundColor(.white)
-                        .background(.orange)
+                        .background(CustomColor.myColor)
                         
                         .padding(.trailing, 10)
                         .disabled(!isToggle[2])
@@ -295,7 +283,7 @@ struct ItemView: View {
                 .frame(width: 200)
                 .frame(height: 60)
                 .foregroundColor(.white)
-                .background(Color.orange)
+                .background(CustomColor.myColor)
                 .cornerRadius(20)
                 .shadow(radius: 5)
                 .padding(.bottom, 100)

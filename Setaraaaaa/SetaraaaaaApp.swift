@@ -14,13 +14,7 @@ struct SetaraaaaaApp: App {
     
     var body: some Scene {
         WindowGroup {
-//           ViewDuaView()
-//            SpendingView()
-//            TablePlateView()
-//             HomeView()
-//            ItemView()
-            
-//            SplashScreenView()
+
             if isOnboarding {
                 SplashScreenView()
             } else {
@@ -28,7 +22,6 @@ struct SetaraaaaaApp: App {
                 
             }
             
-//            ItemView()
         }
     }
 }

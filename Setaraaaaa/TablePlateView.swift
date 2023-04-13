@@ -131,7 +131,7 @@ struct TablePlateView: View {
                 )
             }
             .frame(width: 200, height: 50)
-            .background(Color.orange)
+            .background(CustomColor.myColor)
             .foregroundColor(Color.white)
             .cornerRadius(20)
             .shadow(radius: 5)
