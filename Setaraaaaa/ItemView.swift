@@ -25,6 +25,7 @@ struct ItemView: View {
     @State private var taxIDR: String = ""
     @State var reload = false
     @State var totalPerson = 0
+    @FocusState var isFocused: Bool
     
     var body: some View {
         
@@ -104,6 +105,7 @@ struct ItemView: View {
                             .padding(.leading, 40)
                             .frame(maxWidth: .infinity)
                             .lineLimit(2)
+                            .focused($isFocused)
                         
                     }
                     
@@ -115,6 +117,7 @@ struct ItemView: View {
                         TextField("Enter the number", text: $basePrice)
                             .padding(.leading, 5)
                             .keyboardType(.numberPad)
+                            .focused($isFocused)
                         
                     }.padding(.top,5)
                     
@@ -280,6 +283,8 @@ struct ItemView: View {
                         self.nameItem = ""
                         print("total: ", tmpParticipant.total)
                         
+                        isFocused = false
+                        
                         
                     }
                     
@@ -305,6 +310,9 @@ struct ItemView: View {
         .listStyle(.plain)
         .navigationTitle("\(participant.name)")
     }
+    
+    
+    
 }
 
 struct ItemView_Previews: PreviewProvider {
