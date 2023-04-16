@@ -53,7 +53,6 @@ struct TablePlateView: View {
                     
                     ) .sheet(isPresented: $showingSheet) {
                         
-                        TreatView()
                         
                     }
                     
@@ -66,7 +65,7 @@ struct TablePlateView: View {
                 }
                 
             }
-            .padding(.bottom, 50)
+            
             
             ScrollView(.horizontal, showsIndicators: false) {
                 
@@ -127,14 +126,15 @@ struct TablePlateView: View {
                         
                     }, label: {
                         Text("Continue")
+                            .frame(width: 200, height: 50,alignment: .center)
                     }
                 )
             }
-            .frame(width: 200, height: 50)
             .background(CustomColor.myColor)
             .foregroundColor(Color.white)
             .cornerRadius(20)
             .shadow(radius: 5)
+            .padding(.top, 45)
             
         }
         

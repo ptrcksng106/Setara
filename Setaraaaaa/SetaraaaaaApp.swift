@@ -14,13 +14,8 @@ struct SetaraaaaaApp: App {
     
     var body: some Scene {
         WindowGroup {
-
-            if isOnboarding {
-                SplashScreenView()
-            } else {
-                HomeView()
-                
-            }
+            
+            SplashScreenView()
             
         }
     }

@@ -104,8 +104,10 @@ struct ItemView: View {
                         
                         TextField("Enter the number", text: $basePrice)
                             .padding(.leading, 5)
+                            
                             .keyboardType(.numberPad)
                             .focused($isFocused)
+                        
                         
                     }.padding(.top,5)
                     
@@ -135,6 +137,7 @@ struct ItemView: View {
                                 } secondaryAction: {
                                     print("Cancelled")
                                 }
+                                
                                 
                             }
                             .foregroundColor(.white)
@@ -273,15 +276,13 @@ struct ItemView: View {
                         
                         isFocused = false
                         
-                        
                     }
                     
                 label: {
                     
                     Text("Add")
+                        .frame(width: 200, height: 60, alignment: .center)
                 }
-                .frame(width: 200)
-                .frame(height: 60)
                 .foregroundColor(.white)
                 .background(CustomColor.myColor)
                 .cornerRadius(20)

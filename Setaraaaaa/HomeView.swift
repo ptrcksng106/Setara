@@ -134,15 +134,16 @@ struct HomeView: View {
                     Text("Add Person")
                         .fontWeight(.bold)
                         .font(.system(.title2, design: .rounded))
+                        .frame(width: 200, height: 30, alignment: .center)
                 }
-                .frame(width: 200)
+                //.frame(width: 200)
                 .padding()
                 .foregroundColor(.white)
                 .background(CustomColor.myColor)
                 .cornerRadius(20)
                 .shadow(radius: 5)
                 .padding(.bottom, 100)
-                .frame(height: 200)
+                //.frame(height: 200)
                     
                 }
                 
@@ -173,6 +174,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .accentColor(CustomColor.myColor)
         }
     }
     
