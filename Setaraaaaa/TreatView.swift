@@ -35,11 +35,8 @@ struct TreatView: View {
                     }
                 }
             })
-            
-            
             .pickerStyle(WheelPickerStyle())
             
-            Text("Your selected \(selectedPerson)")
             
             // logic calculate treat
             
@@ -53,7 +50,7 @@ struct TreatView: View {
                 
                 if treatPerson.total < intTreatNumber {
                     
-//                    treatPerson.total = intTreatNumber
+                    //                    treatPerson.total = intTreatNumber
                     
                     print(treatPerson.total)
                     
@@ -69,7 +66,7 @@ struct TreatView: View {
                     let calculateTreatment = (sumTmpTotal - intTreatNumber) / (listNameTable.count - 1)
                     
                     
-//                    let calculateNumberTreatment = intTreatNumber / listNameTable.count - 1
+                    //                    let calculateNumberTreatment = intTreatNumber / listNameTable.count - 1
                     
                     var tmpTotal = 0
                     
@@ -83,65 +80,11 @@ struct TreatView: View {
                             
                             SharedPreferences.shared.add(participant: participantss!)
                             
-                            
-//                            tmpTotal -= Int(participantss?.total ?? 0)
-                            
                         }
-                        
-//                        var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-//
-//                        tmpTotal -= Int(participantss?.total ?? 0)
-                        
-                        
-                        
-//                        if i != selectedPerson {
-//
-//                            var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-//
-//                            tmpTotal = Int(participantss?.total ?? 0) - calculateNumberTreatment
-//                            print(tmpTotal)
-//
-//                            participantss?.total = tmpTotal
-//
-//                            SharedPreferences.shared.add(participant: participantss!)
-//
-//                        }
-                        
-                        
                     }
-                    
-                    print(tmpTotal)
-                    
-//                    if tmpTotal > intTreatNumber {
-//                      let tmp =  tmpTotal - intTreatNumber / listNameTable.count - 1
-//
-//                        for i in 0..<listNameTable.count {
-//
-//                            var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-//
-//                            participantss?.total = tmp
-//
-//                            SharedPreferences.shared.add(participant: participantss!)
-//
-//                        }
-//                    }
-                    
-//                    ForEach(0..<listNameTable.count) {i in
-//
-//                        var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-//
-//                        tmpTotal = Int(participantss?.total ?? 0) - calculateNumberTreatment
-//
-//                        SharedPreferences.shared.add(participant: participantss)
-//
-//                    }
                     
                     treatPerson.total = intTreatNumber
                     SharedPreferences.shared.add(participant: treatPerson)
-                    
-                    
-                    
-                    
                     
                 } else {
                     showAlert.toggle()
