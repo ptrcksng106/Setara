@@ -9,9 +9,6 @@ import SwiftUI
 
 @main
 struct SetaraaaaaApp: App {
-    @AppStorage("isOnboarding") var isOnboarding = true
-    private var isActive: Bool = true
-    
     var body: some Scene {
         WindowGroup {
             

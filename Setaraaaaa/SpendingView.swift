@@ -42,8 +42,8 @@ struct SpendingView: View {
                                         .lineLimit(2)
                                         .frame(alignment: .leading)
                                 }
-                                .padding(.leading, 20)
-                                .padding(.trailing, 50)
+
+                                Spacer()
                                 
                                 Text("Rp \(participantss!.total)")
                                     .frame(width : 100, height: 100, alignment: .leading)
@@ -81,6 +81,7 @@ struct SpendingView: View {
                         message: Text("After this the transaction will be deleted"),
                         primaryButton: .destructive(Text("OK")) {
                             print("Delete the whole transaction")
+                            
                         },
                         secondaryButton: .cancel()
                     )

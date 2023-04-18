@@ -10,13 +10,14 @@ import SwiftUI
 struct HomeView: View {
     
     @State private var checkState: [Bool] = [false, false]
+    @State private var showingAlert: Bool = false
     @State private var btnActive: Bool = true
     @State var checkCount: Int = 0
-    @State var nameParticipant: [String] = ["Me", "test"]
+    @State var nameParticipant: [String] = ["Me"]
     @State private var navigated = false
     @State var listName: [ListName] = [
         ListName(name: "Me", isChecked: false, food: [], total: 0),
-        ListName(name: "test", isChecked: false, food: [], total: 0)]
+]
     
     var body: some View {
         
@@ -113,39 +114,31 @@ struct HomeView: View {
                             }
                         }
                     }
-                    
-                    Button{
+                    NavigationLink(destination: TablePlateView(listNameTable: listName), isActive: $navigated) {
+                        Button{
+                            navigated = true
+                        }
                         
-                        alertTF(title: "Add Participants Name", message: "Enter the names of the person in your group", hintText: "Name", primaryTitle: "Cancel", secondaryTitle: "Add") { text in
-                            
-                            nameParticipant.append(text)
-                            checkState.append(false)
-                            
-                            listName.append(ListName(name: text, isChecked: false, food: [], total: 0))
-                            
-                            
-                        } secondaryAction: {
-                            print("Cancelled")
+                        
+                    label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 230,height: 60)
+                                .shadow(radius: 5)
+
+                                .foregroundColor(CustomColor.myColor)
+                            Text("Next")
+                                .font(.system(.title2, design: .rounded))
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
                         }
                     }
-                    
-                    
-                label: {
-                    Text("Add Person")
-                        .fontWeight(.bold)
-                        .font(.system(.title2, design: .rounded))
-                        .frame(width: 200, height: 30, alignment: .center)
-                }
-                //.frame(width: 200)
-                .padding()
-                .foregroundColor(.white)
-                .background(CustomColor.myColor)
-                .cornerRadius(20)
-                .shadow(radius: 5)
-                .padding(.bottom, 100)
-                //.frame(height: 200)
-                    
-                }
+                    .padding()
+                    .padding(.bottom, 80)
+                    }
+                    .disabled(btnActive)
+                }.background(Image("BackGround"))
+                
                 
                 .listStyle(.plain)
                 .navigationTitle("Participants")
@@ -153,24 +146,34 @@ struct HomeView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
                         
-                            
-                            NavigationLink(destination: TablePlateView(listNameTable: listName), isActive: $navigated) {
                                 Button(
                                     action: {
                                         
-                                        navigated = true
                                         
+                                        alertTF(title: "Add Participants Name", message: "Enter the names of the person in your group", hintText: "Name", primaryTitle: "Cancel", secondaryTitle: "Add") { text in
+                                            
+                                            if text.isEmpty {
+                                                showingAlert.toggle()
+                                            } else {
+                                                nameParticipant.append(text)
+                                                checkState.append(false)
+                                                
+                                                listName.append(ListName(name: text, isChecked: false, food: [], total: 0))
+                                            }
+                                            
+                                            }
+                                            
+                                             secondaryAction: {
+                                            print("Cancelled")
+                                        }
         
                                         
                                     }, label: {
-                                        Text("Next")
+                                        Image(systemName: "plus")
                                     }
-                                )
-                        }
-                            .disabled(btnActive)
-                        
-                        
-                        
+                                ).alert(isPresented: $showingAlert) {
+                                    Alert(title: Text("WARNING").foregroundColor(.red), message: Text("The name is empty"), dismissButton: .default(Text("OK")))
+                                       }
                     }
                 }
             }
@@ -187,6 +190,8 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+
 
 extension View {
     func alertTF(title: String, message: String, hintText: String, primaryTitle: String, secondaryTitle: String, primaryAction: @escaping (String)->(), secondaryAction: @escaping ()->()) {
