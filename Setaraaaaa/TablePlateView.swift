@@ -13,9 +13,11 @@ struct TablePlateView: View {
     @State var listNameTable: [ListName]
     
     @State private var navigated = false
-    @State private var isDeposit = false
     @State private var showingSheet = false
+    @State private var showingSheetDeposit = false
     @State private var isPresented = false
+    
+    
     var body: some View {
         
         
@@ -24,35 +26,61 @@ struct TablePlateView: View {
                 Spacer()
                 Image("Triangle")
             }
-            VStack(spacing : 50) {
+            
+            HStack(spacing: 50) {
                 
-                Button(
-                    action: {
+                VStack() {
+                    
+                    Button(
+                        action: {
+                            
+                            showingSheet.toggle()
+                            
+                            isPresented = true
+                            
+                            
+                        }, label: {
+                            Image("Cake")
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                        }
                         
-                        showingSheet.toggle()
-                        
-                        isPresented = true
-                        
-                        
-                    }, label: {
-                        Image("Cake")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                            .frame(width: 150, height: 150)
+                    ) .sheet(isPresented: $showingSheet) {
+                        TreatView(listNameTable: listNameTable, isPresented: $isPresented, index: 0)
                         
                         
                     }
-                    
-                ) .sheet(isPresented: $showingSheet) {
-                    TreatView(listNameTable: listNameTable, isPresented: $isPresented, index: 0)
-                    
-                    
+                    Text("Treat")
+                        .font(.system(size: 20, weight: .medium))
+                        .frame(alignment: .trailing)
                 }
-                Text("Treat")
-                    .font(.system(size: 20, weight: .medium))
-                    .frame(alignment: .trailing)
+                
+                VStack {
+                    
+                    Button(action: {
+                        
+                        isPresented = true
+                        
+                        showingSheetDeposit.toggle()
+                        
+                    }, label: {
+                        Image("BankPiggy")
+                            .resizable()
+                            .aspectRatio(1, contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                    })
+                    .sheet(isPresented: $showingSheetDeposit) {
+                        DepositView(listNameTable: listNameTable, isPresented: $isPresented ,index: 0)
+                    }
+                    
+                    Text("Deposit")
+                        .font(.system(size: 20, weight: .medium))
+                        .frame(alignment: .trailing)
+                }
             }
-            //.padding(.bottom, 50)
+            
+            
             ScrollView(.horizontal, showsIndicators: false) {
                 
                 HStack(spacing: 25) {
@@ -102,7 +130,6 @@ struct TablePlateView: View {
             
             NavigationLink (destination: SpendingView(listNameTable: listNameTable), isActive: $navigated) {
                 
-                
                 Button(
                     action: {
                         self.navigated = true
@@ -146,8 +173,3 @@ struct TablePlateView_Previews: PreviewProvider {
 }
 
 
-struct Traktiran : View{
-    var body: some View{
-        Text("Hello World")
-    }
-}

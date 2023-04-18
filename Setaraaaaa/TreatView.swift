@@ -14,6 +14,7 @@ struct TreatView: View {
     @State private var selectedPerson = 0
     @Binding var isPresented: Bool
     @State private var showAlert = false
+    @Environment(\.dismiss) var dismiss
     var index: Int
     
     
@@ -86,11 +87,15 @@ struct TreatView: View {
                     treatPerson.total = intTreatNumber
                     SharedPreferences.shared.add(participant: treatPerson)
                     
+                    dismiss()
+                    
                 } else {
                     showAlert.toggle()
                 }
                 
                 isPresented = false
+                
+                
                 
                 
             }) {
