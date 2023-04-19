@@ -177,6 +177,8 @@ struct HomeView: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.large)
             .accentColor(CustomColor.myColor)
         }
     }

@@ -36,5 +36,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "337A74D3-D9F1-47B1-8513-E47BD3A57FA1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Setaraaaaa/UserDefaults.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "deleteAllTransaction(name:index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "337A74D3-D9F1-47B1-8513-E47BD3A57FA1 - 95b8ee91b800e78d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Setaraaaaa.SharedPreferences.deleteAllTransaction(name: Swift.String, index: Swift.Int) -&gt; ()"
+                  moduleName = "Setaraaaaa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patricksinaga/Documents/Learning/Setaraaaaa/Setaraaaaa/UserDefaults.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "337A74D3-D9F1-47B1-8513-E47BD3A57FA1 - 95b8ee91b800e78d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Setaraaaaa.SharedPreferences.deleteAllTransaction(name: Swift.String, index: Swift.Int) -&gt; ()"
+                  moduleName = "Setaraaaaa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/patricksinaga/Documents/Learning/Setaraaaaa/Setaraaaaa/UserDefaults.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

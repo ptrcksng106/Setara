@@ -65,4 +65,15 @@ struct SharedPreferences: Codable {
         
     }
     
+    func deleteAllTransaction(name: String, index: Int) {
+        
+        if let participant = getParitcipant(name: name) {
+            var newparticipant = participant
+            newparticipant.total = 0
+            newparticipant.food.removeAll()
+            add(participant: newparticipant)
+            
+        }
+        
+    }
 }

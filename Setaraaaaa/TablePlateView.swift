@@ -80,6 +80,8 @@ struct TablePlateView: View {
                 }
             }
             
+            Spacer()
+            
             
             ScrollView(.horizontal, showsIndicators: false) {
                 
@@ -92,26 +94,36 @@ struct TablePlateView: View {
                             
                             ZStack(alignment: .bottom) {
                                 
-                                Color(.gray)
-                                    .frame(height: 400 / 3)
-                                    .cornerRadius(20)
-                                    .opacity(0.6)
+//                                Color(.gray)
+//                                    .frame(height: 250)
+//                                    .cornerRadius(10)
+//                                    .opacity(0.6)
                                 
                                
                                 VStack(alignment: .center) {
                                     NavigationLink (destination: ItemView(participant: listNameTable[i], listNameTable: $listNameTable, index: i)) {
                                         
-                                        Image("Piring")
-                                            .resizable()
-                                            .frame(width: 150, height: 150)
-                                            .scaledToFit()
+                                        
+                                        ZStack{
+                                            Rectangle()
+                                                
+                                                .foregroundColor(.white)
+                                                .cornerRadius(100)
+                                                .frame(width: 160, height: 160)
+                                                .shadow(radius: 8)
+                                            Image("Piring")
+                                                .resizable()
+                                                .frame(width: 150, height: 150)
+                                                .scaledToFit()
+                                                .cornerRadius(20)
+                                        }
                                         
                                         
                                     }
                                     
                                     Text(listNameTable[i].name)
                                         .fontWeight(.medium)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.black)
                                     
                                     Text("Rp \(totalSum?.total ?? 0) ")
                                     
